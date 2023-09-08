@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -26,7 +27,12 @@ public class Day1 {
     }
 
      void increaseSize(int[] arr){
+         size = (int)(size * 2 / 1.5);
+         int[] newArray = Arrays.copyOf(arr,size);
 
+         
+
+         
     }
 
      void RandomElemnt(){
