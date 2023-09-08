@@ -24,12 +24,17 @@ public class Day1 {
         Day1 day1 = new Day1(10);
         day1.RandomElemnt();
         day1.printArray();
+        
+        System.out.println("---------------");
+        day1.increaseSize();
+        day1.RandomElemnt();
+        day1.printArray();
     }
 
-     void increaseSize(int[] arr){
+     void increaseSize(){
          size = (int)(size * 2 / 1.5);
          int[] newArray = Arrays.copyOf(arr,size);
-
+        arr = newArray;
          
 
          
