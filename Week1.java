@@ -21,13 +21,12 @@ public class Week1 {
         numElemnts = 0;
     }
     public static void main(String[] args) {
-        Week1 day1 = new Week1(3);
+        Week1 day1 = new Week1(10);
         day1.RandomElemnt();
         day1.printArray();
         
-        System.out.println("---------------");
-        day1.increaseSize();
-        day1.RandomElemnt();
+        System.out.println("\n---------------");
+        day1.shiftRght(2);
         day1.printArray();
     }
 
@@ -44,8 +43,8 @@ public class Week1 {
             arr[0] = r.nextInt(3);
             numElemnts++;
         }
-        for(int i = numElemnts - 1; i<arr.length;i++){
-            arr[i] = r.nextInt(3);
+        for(int i = numElemnts; i<arr.length;i++){
+            arr[i] = r.nextInt(100);
             numElemnts++;
         }
 
@@ -59,5 +58,24 @@ public class Week1 {
          System.out.print(" ]");
         }
 
-        
+        public void addElemnt(int vaue){
+            if(numElemnts == arr.length){
+                increaseSize();
+            }
+            arr[numElemnts] = vaue;
+            numElemnts++;
+        }
+
+
+        public void shiftRght(int index){
+            if(numElemnts == arr.length){
+                increaseSize();
+            }
+
+            for(int i = numElemnts - 1 ; i >= index;i--){
+                arr[i+1] = arr[i];
+            }
+            arr[index] = 0;
+            numElemnts++;
+        }
 }
