@@ -35,11 +35,9 @@ public class Day1 {
          size = (int)(size * 2 / 1.5);
          int[] newArray = Arrays.copyOf(arr,size);
         arr = newArray;
-         
-
-         
+           
     }
-
+        
      void RandomElemnt(){
         Random r = new Random();
         for(int i = 0; i<arr.length;i++){
@@ -56,4 +54,6 @@ public class Day1 {
          }   
          System.out.print(" ]");
         }
+
+        public void swapAr
 }
