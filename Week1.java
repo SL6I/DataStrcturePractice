@@ -67,15 +67,15 @@ public class Week1 {
         }
 
 
-        public void shiftRght(int index){
-            if(numElemnts == arr.length){
-                increaseSize();
+        void shiftRght(int index){
+            if(index < 0 || index > numElemnts){
+                System.out.println("Invalid index");
             }
-
-            for(int i = numElemnts - 1 ; i >= index;i--){
-                arr[i+1] = arr[i];
+            else{
+                for(int i = numElemnts; i > index; i--){
+                    arr[i] = arr[i-1];
+                }
+                arr[index] = 0;
             }
-            arr[index] = 0;
-            numElemnts++;
         }
 }
