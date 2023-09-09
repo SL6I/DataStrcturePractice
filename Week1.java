@@ -4,24 +4,24 @@ import java.util.Random;
 /**
  * Day1
  */
-public class Day1 {
+public class Week1 {
     private int size;
     private int[] arr;
     private int numElemnts;
 
-    Day1(){
+    Week1(){
         size = 0;
         arr = new int[5];
         numElemnts = 0;
     }
 
-    Day1(int size){
+    Week1(int size){
         this.size = size;
         arr = new int[size];
         numElemnts = 0;
     }
     public static void main(String[] args) {
-        Day1 day1 = new Day1(10);
+        Week1 day1 = new Week1(3);
         day1.RandomElemnt();
         day1.printArray();
         
@@ -40,7 +40,11 @@ public class Day1 {
         
      void RandomElemnt(){
         Random r = new Random();
-        for(int i = 0; i<arr.length;i++){
+        if(numElemnts == 0){
+            arr[0] = r.nextInt(3);
+            numElemnts++;
+        }
+        for(int i = numElemnts - 1; i<arr.length;i++){
             arr[i] = r.nextInt(3);
             numElemnts++;
         }
@@ -55,5 +59,5 @@ public class Day1 {
          System.out.print(" ]");
         }
 
-        public void swapAr
+        
 }
