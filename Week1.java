@@ -33,6 +33,8 @@ public class Week1 {
         // day1.shiftRght(2);
         // day1.printArray();
         System.out.println(day1.factorial(4));
+        System.out.println(day1.sumUpTo(5));
+        System.out.println(day1.meth(5));
     }
 
      void increaseSize(){
@@ -100,8 +102,22 @@ public class Week1 {
                 return 1;
             }
             else{
+                System.out.println(n);
                 return n * factorial(n-1);
             }
+        }
+        int sumUpTo(int n){
+            if(n == 1){
+                return 1;
+            }
+            else{
+                return n + sumUpTo(n-1);
+            }
+        }
+        int meth(int n){
+            if(n == 0) return 0;
+            else if (n == 1) return 1;
+            else return meth(n-1) + meth(n-2);
         }
 
 }
