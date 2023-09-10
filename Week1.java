@@ -4,6 +4,10 @@ import java.util.Random;
 /**
  * Day1
  */
+/**
+ * Day1
+ * 
+ */
 public class Week1 {
     private int size;
     private int[] arr;
@@ -22,12 +26,13 @@ public class Week1 {
     }
     public static void main(String[] args) {
         Week1 day1 = new Week1(10);
-        day1.RandomElemnt();
-        day1.printArray();
+        // day1.RandomElemnt();
+        // day1.printArray();
         
-        System.out.println("\n---------------");
-        day1.shiftRght(2);
-        day1.printArray();
+        // System.out.println("\n---------------");
+        // day1.shiftRght(2);
+        // day1.printArray();
+        System.out.println(day1.factorial(4));
     }
 
      void increaseSize(){
@@ -78,4 +83,25 @@ public class Week1 {
                 arr[index] = 0;
             }
         }
+        void remove(int index){
+            if(index < 0 || index > numElemnts){
+                System.out.println("Invalid index");
+            }
+            else{
+                for(int i = index; i < numElemnts; i++){
+                    arr[i] = arr[i+1];
+                }
+                arr[numElemnts] = 0;
+            }
+        }
+
+        int factorial(int n){
+            if(n == 0){
+                return 1;
+            }
+            else{
+                return n * factorial(n-1);
+            }
+        }
+
 }
