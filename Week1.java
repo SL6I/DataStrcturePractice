@@ -35,6 +35,7 @@ public class Week1 {
         System.out.println(day1.factorial(4));
         System.out.println(day1.sumUpTo(5));
         System.out.println(day1.meth(5));
+        System.out.println(day1.Fibonacci(3));
     }
 
      void increaseSize(){
@@ -118,6 +119,31 @@ public class Week1 {
             if(n == 0) return 0;
             else if (n == 1) return 1;
             else return meth(n-1) + meth(n-2);
+        }
+
+        void binarySearchRec(int[] arr, int target, int low, int high){
+            if(low > high){
+                System.out.println("Not found");
+            }
+            else{
+                int mid = (low + high) / 2;
+                if(arr[mid] == target){
+                    System.out.println("Found");
+                }
+                else if(arr[mid] > target){
+                    binarySearchRec(arr, target, low, mid-1);
+                }
+                else{
+                    binarySearchRec(arr, target, mid+1, high);
+                }
+            }
+        }
+        int Fibonacci(int n){
+            if(n == 0){
+                return 0;
+            }
+            else if(n == 1)return 1;
+            else return Fibonacci(n-1) + Fibonacci(n-2);
         }
 
 }
