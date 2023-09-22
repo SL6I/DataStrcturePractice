@@ -6,5 +6,7 @@ public class Week2 {
         a1[0] = 7;
         a2[0] = 8;
         System.out.println(a1[0]+"\n"+a2[0]);
+        float a = 12f;
+        System.out.println(a);
     }
 }
