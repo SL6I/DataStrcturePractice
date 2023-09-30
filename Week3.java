@@ -52,22 +52,69 @@ public class Week3 {
 class Main{
 	
 	public static void main(String[] args) {
+		int[] originalArray = {1, 2, 3};
+int[] shallowCopyArray = originalArray.clone();
+shallowCopyArray[0] = 99;
+System.out.println(originalArray[0]); // Outputs 1
+System.out.println("hi");
+		
+		int array[] = new int[10];
+		int target = 3;
+		
+		for(int i = 0; i < array.length; i++) {
+			array[i] = i;
+		}
+		
+		//int index = Arrays.binarySearch(array, target);
+		int index = binarySearch(array, target);
+		
+		if(index == -1) {
+			System.out.println(target + " not found");
+		}
+		else {
+			System.out.println("Element found at: " + index);
+		}
+		// DynamicArray dynamicArray = new DynamicArray(5);
+		// System.out.println(dynamicArray.raduis(130.55));
+		
+		// dynamicArray.add("A");
+		// dynamicArray.add("B");
+		// dynamicArray.add("C");
+		
+		// //System.out.println(dynamicArray.get(0));
+		// //dynamicArray.insert(0, "X");
+		// // dynamicArray.delete("A");
+		// //System.out.println(dynamicArray.search("C"));
+		
+		// System.out.println(dynamicArray);
+		// System.out.println("size: " + dynamicArray.size);
+		// System.out.println("capacity: " + dynamicArray.capacity);
+		// System.out.println("empty: " + dynamicArray.isEmpty());
+		
+	}
 
-		DynamicArray dynamicArray = new DynamicArray(5);
+	private static int binarySearch(int[] array, int target) {
 		
-		dynamicArray.add("A");
-		dynamicArray.add("B");
-		dynamicArray.add("C");
+		int low = 0;
+		int high = array.length - 1;
 		
-		//System.out.println(dynamicArray.get(0));
-		//dynamicArray.insert(0, "X");
-		// dynamicArray.delete("A");
-		//System.out.println(dynamicArray.search("C"));
+		while(low <= high) {
+			
+			int middle = low + (high - low) / 2;
+			int valueM = array[middle];
+			
+			System.out.println("middle: " + valueM);
+			
+			if(valueM < target) low = middle + 1;
+			else if(valueM > target) high = middle - 1;
+			else return middle; //target found
+		}
 		
-		System.out.println(dynamicArray);
-		System.out.println("size: " + dynamicArray.size);
-		System.out.println("capacity: " + dynamicArray.capacity);
-		System.out.println("empty: " + dynamicArray.isEmpty());
+		return -1;
+	
+
+		
+		
 	}
 }
 class DynamicArray<T> {
@@ -129,7 +176,7 @@ class DynamicArray<T> {
 		
 		for(int i = 0; i < size; i++) {
 			if(array[i] == data) {
-				System.out.println(array[i].);
+				System.out.println(array[i]);
 				return i;
 			}
 		}
@@ -179,5 +226,18 @@ class DynamicArray<T> {
 		}
 		return string;
 	}
+	public static double raduis(double circumference) {
+		// write your code here
+		return circumference / (3.14 * 2);
+	}
+	public static String word_repeat(String word, int n) {
+    // write your code here
+    String string = "";
+    for(int i = 0;i<n;i++){
+        string += word;
+    }
+    return string.substring(0,string.length()-1);
+}
+
 }
 
